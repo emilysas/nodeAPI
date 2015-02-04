@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var server = require('http').createServer(app);
+var jacob = require('./app/jacob')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -13,8 +14,13 @@ app.get('/', function(request, response){
 });
 
 app.get('/json_name', function(req, res){
-  res.json('reflect', {query: req.query});
+  res.json('json_name', {query: req.query});
 });
+
+app.get('/jacob', function(req, res){
+	console.log(jacob());
+	res.json('jacob', {query: jacob.query});
+})
 
 server.listen(3000, function(){
 	console.log("Server listening on port 3000");

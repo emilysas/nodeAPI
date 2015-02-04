@@ -9,9 +9,15 @@ module.exports = function(grunt){
 				src: ['test/**/*']
 			}
 		},
+		nodemon: {
+  		dev: {
+    script: 'index.js'
+  }
+}
 	});
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-mocha-casperjs');
+	grunt.loadNpmTasks('grunt-nodemon');
 
 	grunt.registerTask('default', ['mocha_casperjs']);
 
