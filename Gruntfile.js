@@ -8,17 +8,17 @@ module.exports = function(grunt){
 			files: {
 				src: ['test/**/*']
 			}
-		}
-		// jasmine_node: {
-		// 	options: {
-		// 		forceExit: true,
-		// 	},
-		// 	all: ['spec/']
-		// }
+		},
+		jasmine_node: {
+			options: {
+				forceExit: true,
+			},
+			all: ['spec/']
+		},
 	});
 	grunt.loadNpmTasks('grunt-mocha-casperjs');
-	grunt.registerTask('default', ['mocha_casperjs']);
-	// grunt.loadNpmTasks('grunt-jasmine-node');
+	grunt.loadNpmTasks('grunt-jasmine-node');
 
-	// grunt.registerTask('default', ['jasmine_node']);
+	grunt.registerTask('default', ['mocha_casperjs']);
+	grunt.registerTask('jasmine', ['jasmine_node']);
 };

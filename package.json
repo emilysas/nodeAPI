@@ -20,5 +20,9 @@
     "grunt-mocha-casperjs": "^1.4.1",
     "mocha-casperjs": "^0.5.3",
     "phantomjs": "^1.9.15"
+  },
+  "dependencies": {
+    "ejs": "^2.2.4",
+    "express": "^4.11.2"
   }
 }

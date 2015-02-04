@@ -2,8 +2,11 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/views'));
+
 app.get('/', function(request, response){
-	response.send("Hello world")
+	response.render('index', { names: "Jake & Emily"} );
 });
 
 server.listen(3000, function(){
