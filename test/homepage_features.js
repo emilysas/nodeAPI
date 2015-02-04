@@ -4,18 +4,18 @@ describe('homepage', function(){
     casper.start('http://localhost:3000/');
   });
 
-	it('greeting', function(){
-		casper.waitForSelector('form', function() {
+	// it('greeting', function(){
+	// 	casper.waitForSelector('form', function() {
 
-			this.fill("form#nameform", {
-				'name' : 'Emily',
-			}, true);
+	// 		this.fill("form#nameform", {
+	// 			'name' : 'Emily',
+	// 		}, true);
 
-		});
-    casper.then(function() {
-      expect('h1').to.have.text('HI Emily');
-    });
-	});
+	// 	});
+ //    casper.then(function() {
+ //      expect('h1').to.have.text('HI Emily');
+ //    });
+	// });
 
   // it('tweet', function() {
   //   casper.waitForSelector('#tweetform', function() {
@@ -37,8 +37,8 @@ describe('homepage', function(){
 			}, true);
 
 		});
-		casper.thenOpen('/json_name', function() {
-      expect('h2').to.have.text("{\"name\" : \"Emily\"}");
+		casper.then(function() {
+      expect('body').to.have.text("{\"name\":\"Emily\"}");
 		})
 	})
 

@@ -18,6 +18,10 @@ app.post('/name', function(req, res){
   res.render('index', { name: name } );
 });
 
+app.get('/json_name', function(req, res){
+  res.json(req.query);
+});
+
 server.listen(3000, function(){
 	console.log("Server listening on port 3000");
 });
