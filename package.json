@@ -16,12 +16,15 @@
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-express": "^1.4.1",
+    "grunt-express-server": "^0.4.19",
     "grunt-jasmine-node": "^0.2.1",
     "grunt-mocha-casperjs": "^1.4.1",
     "mocha-casperjs": "^0.5.3",
     "phantomjs": "^1.9.15"
   },
   "dependencies": {
+    "body-parser": "^1.11.0",
     "ejs": "^2.2.4",
     "express": "^4.11.2"
   }
