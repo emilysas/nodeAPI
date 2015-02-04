@@ -1,8 +1,7 @@
-<% if(name){%>
-<h1><%= 'HI ' + name %></h1>
-<% } %>
+<% if(!name){ var name = 'Jake' }%>
+<h1><%= 'Hi ' + name %></h1>
 
-<form action='/json_name' method='get' id='nameform'>
+<form action='/' method='get' id='nameform'>
   <input type='text' name='name'>
   <input type='submit' value='submit'>
 </form>
