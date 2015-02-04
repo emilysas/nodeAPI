@@ -17,17 +17,29 @@ describe('homepage', function(){
     });
 	});
 
-  it('tweet', function() {
-    casper.waitForSelector('#tweetform', function() {
+  // it('tweet', function() {
+  //   casper.waitForSelector('#tweetform', function() {
 
-        this.fill("#tweetform#find-twitter-account", {
-          'account' : '@sasemily',
-        }, true);
+  //       this.fill("#tweetform#find-twitter-account", {
+  //         'account' : '@sasemily',
+  //       }, true);
 
-    });
-    casper.then(function() {
-      expect('#tweet').to.have.text("Hey @Jakobtek your code smells.");
-    });
-  });
+  //   });
+  //   casper.then(function() {
+  //     expect('#tweet').to.have.text("Hey @Jakobtek your code smells.");
+  //   });
+  // });
+	it('json loveliness', function() {
+		casper.waitForSelector('form', function() {
+
+			this.fill("form#nameform", {
+				'name' : 'Emily',
+			}, true);
+
+		});
+		casper.thenOpen('/json_name', function() {
+      expect('h2').to.have.text("{\"name\" : \"Emily\"}");
+		})
+	})
 
 });
