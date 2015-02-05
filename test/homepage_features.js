@@ -27,7 +27,8 @@ describe('Github API Simulation', function(){
     casper.thenOpen(host + '/users/henrygarner', function(response){
  			expect(response.headers.get('Access-Control-Allow-Origin')).to.equal('*');
    		expect(response.headers.get('Content-Type')).to.equal('application/json; charset=utf-8');
-  		expect('body').to.have.text( expect('body').to.have.text('{"login":"henrygarner", "avatar_url": "https://avatars.githubusercontent.com/u/24540?v=3" "public_repos":"77", "followers":"24", }');
+  		expect('body').to.have.text( expect('body').to.have.text('{"login": "henrygarner", "avatar_url": "https://avatars.githubusercontent.com/u/24540?v=3", "public_repos": 77, "followers": 25, "following": 42, }');
+  
   	});
   });
 

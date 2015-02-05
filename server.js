@@ -7,14 +7,16 @@ var server = require('http').createServer(app);
 // app.use(bodyParser.urlencoded({ extended: false }))
 
 app.set('view engine', 'ejs');
-// app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/views'));
+app.use('/stylesheets', express.static(__dirname + '/public/stylesheets'));
+app.use('/javascript', express.static(__dirname + '/public/javascript'));
 
 app.get('/', function(request, response){
 	response.send('Github API Simulation');
 });
 
-app.get('/users/:name', function(request, response){
-	response.render('emily.ejs')
+app.get('/users/:user', function(request, response){
+	response.render(request.params.user)
 });
 
 // app.get('/json_name', function(req, res){
