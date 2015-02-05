@@ -13,6 +13,10 @@ app.get('/', function(request, response){
 	response.send('Github API Simulation');
 });
 
+app.get('/users/:name', function(request, response){
+	response.render('emily.ejs')
+});
+
 // app.get('/json_name', function(req, res){
 //   res.json('json_name', {query: req.query});
 // });
