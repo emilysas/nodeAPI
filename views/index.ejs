@@ -5,29 +5,32 @@
   </head>
   <body>
     <form id='add_profile'>
-      <input id='username' placeholder='Enter a Github username'>
+      <input id='username' name = 'username' placeholder='Enter a Github username'>
       <button type='submit'>Load profile</button>
     </form>
 
     <div class='profile-container'>
-      <div class="profile">
-        <div class="left">
-          <img src="https://avatars.githubusercontent.com/u/5008648?">
-        </div>
 
-        <div class="right">
-          <h3>
-            <a href="https://github.com/tansaku">
-              tansaku
-            </a>
-          </h3>
-          <h4>Repos: 120</h4>
-          <h4>Followers: 122</h4>
-        </div>
-        <br clear="all">
-      </div>
-    </div>
+    	<template id='profile-template'>
+	      <div class="profile">
+	        <div class="left">
+	          <img src="{{ avatar_url }}">
+	        </div>
+
+	        <div class="right">
+	          <h3>
+	            <a href="{{ html_url }}">{{ login }}</a>
+	          </h3>
+	          <h4>Repos: {{ public_repos }}</h4>
+	          <h4>Followers: {{ public_followers }}</h4>
+	        </div>
+	        <br clear="all">
+	      </div>
+	    </div>
+    </template>
 
     <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js'></script>
+    <script src='/scripts/load_user.js'></script>
   </body>
 </html>
