@@ -1,6 +1,3 @@
-// var chai = require('chai');
-// var expect = chai.expect;
-
 var host = 'http://localhost:3000';
 
 describe('Github API Simulation', function(){

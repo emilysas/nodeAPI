@@ -8,11 +8,11 @@ var server = require('http').createServer(app);
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/views'));
-app.use('/stylesheets', express.static(__dirname + '/public/stylesheets'));
-app.use('/javascript', express.static(__dirname + '/public/javascript'));
+app.use('/css', express.static(__dirname + '/public/css'));
+app.use('/scripts', express.static(__dirname + '/public/scripts'));
 
 app.get('/', function(request, response){
-	response.send('Github API Simulation');
+	response.render('index');
 });
 
 app.get('/users/:user', function(request, response){
